@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Win Clinic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<!--drop down-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64 w3-text-white"><b>Win<br>Clinic</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-white">Home</a> 
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-white">Showcase</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-white">원장</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-white">진료시간</a> 
+    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-white">진료안내</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white w3-text-white">오시는 길</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-light-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-light-blue w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Win Clinic</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-xxlarge"><b>윈 가정의학과</b></h1>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click me</button>
+      <div id="demo" class="collapse">
+        너는 물댄동산 같겠고, 물이 끊어지지 아니하는 샘 같을 것이라 이사야58:11, 축복합니다❤
+      </div>
+    <h1 class="w3-large w3-text-light-blue"><b>Tel: 02-420-6540</b></h1>
+    <h1 class="w3-large w3-text-light-blue"><b>서울시 송파구 잠실본동 181-7 상록빌딩 3층</b></h1>
+    <hr style="width:50px;border:5px solid lightblue" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="1.jpg" style="width:100%" onclick="onClick(this)" alt="Win clinic">
+      <img src="2.jpg" style="width:100%" onclick="onClick(this)" alt="진료실">
+      <img src="3.jpg" style="width:100%" onclick="onClick(this)" alt="방역 완료">
+    </div>
+
+    <div class="w3-half">
+      <img src="2.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
+      <img src="2.jpg" style="width:100%" onclick="onClick(this)" alt="진료실">
+      <img src="3.jpg" style="width:100%" onclick="onClick(this)" alt="방역 완료">
+      <h1 class="w3-large w3-text-blue"><b> 전염병 예방 방역 완료 </b></h1>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>원장</b></h1>
+    <hr style="width:50px;border:5px solid lightblue" class="w3-round">
+    <p><b>연세대 졸업</b></p>
+    <p><b>신촌 세브란스병원 가정의학과 전문의</b></p>
+    <p><b>아주대 비만클리닉</b></p>
+    <p><b>미국 비만 전문의 협회 정회원</b></p>
+    <p><b>대한 일차의료학회 재무이사</b></p>
+    <p><b>하나한방병원 비만 클리닉 원장 역임</b></p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>진료시간.</b></h1>
+    <hr style="width:50px;border:5px solid lightblue" class="w3-round">
+      <h1 class="w3-large"><b>평일: 오전 9:30 ~ 오후 6:30 </b></h1>
+      <h1 class="w3-large"><b>토요일: 오전 9:30 ~ 오후 2:00 </b></h1>
+      <h1 class="w3-large"><b>점심시간: 오후 1:00 ~ 오후 2:00 </b></h1>
+      <h1 class="w3-large"><b>공휴일: 휴진 </b></h1>
+  </div>
+
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>진료안내.</b></h1>
+    <hr style="width:50px;border:5px solid lightblue" class="w3-round">
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16">내과/ 감기몸살/ 만성피로/ 갱년기장애</li>
+        <li class="w3-padding-16">부분탈모/ 미네랄 모발검사</li>
+        <li class="w3-padding-16">복부비만</li>
+        <li class="w3-padding-16">통증의학/ 허리통증/ 골다공증/ 무릎관절</li>
+        <li class="w3-padding-16">물리치료</li>
+      </ul>
+    </div>
+        
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+        <li class="w3-padding-16">
+          <h3>허리통증</h3>
+          <span class="w3-opacity">라에넥 주사 - 근육,인대기능강화</span>
+        </li>
+        <li class="w3-padding-16">
+          <h3>통증치료</h3>
+          <span class="w3-opacity">신경자극치료-예민화된 C섬유 제거후, 정상신경 대치</span>
+        </li>
+        <li class="w3-padding-16">
+          <h3>만성피로</h3>
+          <span class="w3-opacity">해독주사-10년간 연구한 마이어스 칵테일주사를 발전시킨 해독주사</span>
+        </li>
+        <li class="w3-padding-16">
+          <h3>개별화 비만치료</h3>
+          <span class="w3-opacity">사춘기, 분만후, 폐경후 비만 및 남성비만등 각각의 비만특징에 따른 다양한 접근치료</span>
+        
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+   
+
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-light-blue"><b>오시는 길.</b></h1>
+    <hr style="width:50px;border:5px solid lightblue" class="w3-round">
+    <div class="w3-half">
+        <img src="4.png" style="width:100%" onclick="onClick(this)" alt="Win clinic">
+        <h1 class="w3-medium "><b>잠실새내역 4번출구로 나오시면 됩니다</b></h1>
+        <h1 class="w3-medium "><b>맥도날드 옆건물, 1층엔 신한은행, 3층이 병원입니다</b></h1>
+    </div>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by Win clinic </p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
